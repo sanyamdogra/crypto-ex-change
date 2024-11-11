@@ -1,7 +1,5 @@
 interface ExchangePageProps {
-  params: {
-    page: string;
-  };
+  params: Promise<{ page: string }>;
 }
 
 export default async function ExchangePage({ params }: ExchangePageProps) {
