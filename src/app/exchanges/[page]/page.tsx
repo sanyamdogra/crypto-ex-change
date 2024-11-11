@@ -1,5 +1,6 @@
 import { fetchExchanges } from "@/services";
 import { formatPageNumber } from "@/utils/helpers";
+import ExchangeTable from "@/components/ExchangeTable";
 
 interface ExchangePageProps {
   params: Promise<{ page: string }>;
@@ -12,8 +13,6 @@ export default async function ExchangePage({ params }: ExchangePageProps) {
 
   const { data: exchanges, status, error } = await fetchExchanges(page);
 
-  console.log(exchanges);
-
   if (error) {
     return (
       <div>
@@ -24,7 +23,7 @@ export default async function ExchangePage({ params }: ExchangePageProps) {
 
   return (
     <>
-      <div>{pageNumber}</div>
+      <ExchangeTable exchanges={exchanges} />
     </>
   );
 }
