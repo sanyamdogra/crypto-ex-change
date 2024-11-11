@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
+
+import Header from "@/components/Header";
+
+import "@radix-ui/themes/styles.css";
 import "./globals.css";
 
 const spaceGrotesk = localFont({
@@ -20,7 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable}`}>{children}</body>
+      <body className={`${spaceGrotesk.variable}`}>
+        <Theme appearance="dark" accentColor="blue">
+          <Header />
+          {children}
+        </Theme>
+      </body>
     </html>
   );
 }

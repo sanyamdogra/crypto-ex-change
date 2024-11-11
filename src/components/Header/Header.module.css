@@ -1,0 +1,18 @@
+.header {
+  padding: 0.5rem 2rem;
+  font-family: var(--font-space-grotesk);
+  border-bottom: 1px solid var(--slate-7);
+  text-align: center;
+  position: fixed;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: var(--header-height);
+}
+
+.subHeading {
+  color: var(--blue-9);
+  font-weight: 100;
+}

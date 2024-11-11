@@ -3,6 +3,12 @@
   --primary-dark-bg-02: #192548;
   --primary-dark-bg-03: #0a111e;
   --primary-dark-bg-04: #0f1b2d;
+
+  --header-height: 65px;
+
+  .radix-themes {
+    --color-background: var(--primary-dark-bg-04);
+  }
 }
 
 html,
