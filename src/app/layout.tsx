@@ -3,6 +3,7 @@ import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Theme appearance="dark" accentColor="blue">
           <Header />
           {children}
+          <Footer />
         </Theme>
       </body>
     </html>
