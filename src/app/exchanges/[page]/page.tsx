@@ -2,6 +2,7 @@ import { fetchExchanges } from "@/services";
 import { formatPageNumber } from "@/utils/helpers";
 import ExchangeTable from "@/components/ExchangeTable";
 import Pagination from "@/components/Pagination";
+import ErrorMessage from "@/components/ErrorMessage";
 
 interface ExchangePageProps {
   params: Promise<{ page: string }>;
@@ -15,11 +16,7 @@ export default async function ExchangePage({ params }: ExchangePageProps) {
   const { data: exchanges, status, error } = await fetchExchanges(page);
 
   if (error) {
-    return (
-      <div>
-        {error} {status}
-      </div>
-    );
+    return <ErrorMessage status={status} error={error} />;
   }
 
   return (
