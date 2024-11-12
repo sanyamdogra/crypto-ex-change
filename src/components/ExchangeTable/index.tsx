@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Flex, Table } from "@radix-ui/themes";
+import { Badge, Box, Flex, Table } from "@radix-ui/themes";
 
-import { Exchange } from "@/types";
+import { BadgeColors, Exchange } from "@/types";
+import { getColor } from "@/utils/helpers";
 
 import styles from "./ExchangeTable.module.css";
 
@@ -56,7 +57,14 @@ const ExchangeTable: React.FC<Props> = ({ exchanges }) => {
               </Table.Cell>
               <Table.Cell> {exchange.year_established || "-"}</Table.Cell>
               <Table.Cell> {exchange.country || "-"}</Table.Cell>
-              <Table.Cell>{exchange.trust_score || "N/A"}</Table.Cell>
+              <Table.Cell>
+                <Badge
+                  size="2"
+                  color={getColor(exchange.trust_score) as BadgeColors}
+                >
+                  {exchange.trust_score || "N/A"}
+                </Badge>
+              </Table.Cell>
               <Table.Cell>
                 {exchange.trade_volume_24h_btc.toFixed(2) || "-"}
               </Table.Cell>

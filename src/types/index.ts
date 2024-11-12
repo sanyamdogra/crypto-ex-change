@@ -9,3 +9,5 @@ export interface Exchange {
   trade_volume_24h_btc_normalized: number;
   url: string;
 }
+
+export type BadgeColors = "green" | "red" | "yellow" | "blue";
