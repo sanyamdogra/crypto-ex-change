@@ -1,6 +1,7 @@
 import { fetchExchanges } from "@/services";
 import { formatPageNumber } from "@/utils/helpers";
 import ExchangeTable from "@/components/ExchangeTable";
+import Pagination from "@/components/Pagination";
 
 interface ExchangePageProps {
   params: Promise<{ page: string }>;
@@ -24,6 +25,7 @@ export default async function ExchangePage({ params }: ExchangePageProps) {
   return (
     <>
       <ExchangeTable exchanges={exchanges} />
+      <Pagination currentPage={page} />
     </>
   );
 }

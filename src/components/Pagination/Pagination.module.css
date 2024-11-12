@@ -1,0 +1,12 @@
+.container {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.pageInfo {
+  margin: 0 1rem;
+  font-weight: 100;
+  font-size: var(--font-size-2);
+  color: var(--slate-11);
+}
