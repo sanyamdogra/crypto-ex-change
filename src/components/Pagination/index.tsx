@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import { Box, IconButton } from "@radix-ui/themes";
-
 import { TOTAL_PAGES } from "@/utils/constants";
 
 import styles from "./Pagination.module.css";
@@ -27,8 +26,14 @@ const Pagination: React.FC<Props> = ({ currentPage }) => {
       </Link>
 
       <span className={styles.pageInfo}>
-        Page <span className={styles.pageInfoNumber}>{currentPage}</span> of{" "}
-        {TOTAL_PAGES}
+        Page{" "}
+        <span
+          className={styles.pageInfoNumber}
+          data-testid="pagination-current-page"
+        >
+          {currentPage}
+        </span>{" "}
+        of {TOTAL_PAGES}
       </span>
 
       <Link

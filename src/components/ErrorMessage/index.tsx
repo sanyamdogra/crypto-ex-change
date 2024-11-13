@@ -13,9 +13,13 @@ const ErrorMessage: React.FC<Props> = ({ error, status }) => {
     <Box className={styles.container}>
       <LinkBreak2Icon height={"4rem"} width={"4rem"} color="red" />
       <Box className={styles.message}>
-        <Text size={"5"}>{error}</Text>
+        <Text size={"5"} data-testid="error-message">
+          {error}
+        </Text>
       </Box>
-      <Text size={"2"}>Status Code: {status}</Text>
+      <Text size={"2"} data-testid="error-message-status-code">
+        Status Code: {status}
+      </Text>
     </Box>
   );
 };
